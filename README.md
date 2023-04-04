@@ -1,2 +1,2 @@
-# **BTL-SDL**
-#### Bài tập lớn sử dụng SDL
+# **2048**
+#### Trò chơi 2048 với đồ hoạ nhờ SDL
