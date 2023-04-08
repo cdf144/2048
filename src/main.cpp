@@ -1,6 +1,5 @@
 #include <iostream>
 #include <cstdlib>
-#include <string>
 
 using std::cin;
 using std::cout;
@@ -45,14 +44,14 @@ struct Grid {
                     if (board[i][j] == NULL)
                         ++countEmptyTiles;
             }
-            if (countEmptyTiles == 0) cout << "Invalid move" << std::endl;
+            if (countEmptyTiles == 0) cout << "Try a different move" << std::endl;
             else {
                 while (true) {
                     int row = rand()%4;
                     int col = rand()%4;
                     if (board[row][col] == NULL) {
                         board[row][col] = new int;
-                        *board[row][col] = 2;
+                        *board[row][col] = ((rand()%5) == 4 ? 4 : 2);
                         break;
                     }
                 }
