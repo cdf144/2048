@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstdlib>
+#include <string>
 
 using std::cin;
 using std::cout;
@@ -16,6 +17,7 @@ struct Grid {
         }
         
         void printGrid() {
+            system("cls");
             for (int i=0; i<GRID_SIZE; i++) {
                 for (int j=0; j<GRID_SIZE; j++) {
                     if (board[i][j] == NULL) cout << "-" << "    ";
@@ -33,6 +35,7 @@ struct Grid {
                 cout << "\n";
             }
             cout << "\n";
+            cout << "Use WASD to move, Press 'q' to quit: ";
         }
         
         void generate() {
@@ -255,6 +258,7 @@ int main() {
 
     while (!playground.isGameOver()) {
         cin >> input;
+        cout << "\n";
         if (input=='q') break;
         if (input=='w' || input=='a' || input=='s' || input=='d') {
             switch (input) {
