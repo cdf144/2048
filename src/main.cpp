@@ -18,7 +18,7 @@ struct Grid {
         void printGrid() {
             for (int i=0; i<GRID_SIZE; i++) {
                 for (int j=0; j<GRID_SIZE; j++) {
-                    if (board[i][j] == NULL) cout << "-" << " ";
+                    if (board[i][j] == NULL) cout << "-" << "    ";
                     else {
                         if (*board[i][j] < 10)
                             cout << *board[i][j] << "    ";
