@@ -19,7 +19,16 @@ struct Grid {
             for (int i=0; i<GRID_SIZE; i++) {
                 for (int j=0; j<GRID_SIZE; j++) {
                     if (board[i][j] == NULL) cout << "-" << " ";
-                    else cout << *board[i][j] << " ";
+                    else {
+                        if (*board[i][j] < 10)
+                            cout << *board[i][j] << "    ";
+                        if (*board[i][j] >= 10 && *board[i][j] < 100)
+                            cout << *board[i][j] << "   ";
+                        if (*board[i][j] >= 100 && *board[i][j] < 1000)
+                            cout << *board[i][j] << "  ";
+                        if (*board[i][j] >= 1000)
+                            cout << *board[i][j] << " ";
+                    }
                 } 
                 cout << "\n";
             }
@@ -240,10 +249,10 @@ int main() {
     srand(time(NULL));
     Grid playground;
     char input;
-
+    
     playground.generate(); playground.generate();
     playground.printGrid();
-    
+
     while (!playground.isGameOver()) {
         cin >> input;
         if (input=='q') break;
