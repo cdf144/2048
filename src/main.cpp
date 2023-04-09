@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstdlib>
+#include <conio.h>
 
 using std::cin;
 using std::cout;
@@ -256,7 +257,8 @@ int main() {
     playground.printGrid();
 
     while (!playground.isGameOver()) {
-        cin >> input;
+        input = getche();
+        // cin >> input;
         cout << "\n";
         if (input=='q') break;
         if (input=='w' || input=='a' || input=='s' || input=='d') {
