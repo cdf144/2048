@@ -103,7 +103,7 @@ struct Grid {
                     for (int k=j-1; k>=0; k--) {
                         if (board[i][k] != NULL) {
                             if (*board[i][k] == *board[i][j]) {
-                                *board[i][j] *= 2;
+                                *board[i][j] = (*board[i][j])<<1;
                                 board[i][k] = NULL;
                                 break;
                             }
@@ -115,7 +115,7 @@ struct Grid {
                     for (int k=j-1; k>=0; k--) {
                         if (board[i][k] != NULL) {
                             if (*board[i][k] == *board[i][j]) {
-                                *board[i][j] *= 2;
+                                *board[i][j] = (*board[i][j])<<1;
                                 board[i][k] = NULL;
                                 break;
                             }
@@ -140,7 +140,7 @@ struct Grid {
                     for (int k=j+1; k<GRID_SIZE; k++) {
                         if (board[i][k] != NULL) {
                             if (*board[i][k] == *board[i][j]) {
-                                *board[i][j] *= 2;
+                                *board[i][j] = (*board[i][j])<<1;
                                 board[i][k] = NULL;
                                 break;
                             }
@@ -152,7 +152,7 @@ struct Grid {
                     for (int k=j+1; k<GRID_SIZE; k++) {
                         if (board[i][k] != NULL) {
                             if (*board[i][k] == *board[i][j]) {
-                                *board[i][j] *= 2;
+                                *board[i][j] = (*board[i][j])<<1;
                                 board[i][k] = NULL;
                                 break;
                             }
@@ -177,7 +177,7 @@ struct Grid {
                     for (int k=i+1; k<GRID_SIZE; k++) {
                         if (board[k][j] != NULL) {
                             if (*board[k][j] == *board[i][j]) {
-                                *board[i][j] *= 2;
+                                *board[i][j] = (*board[i][j])<<1;
                                 board[k][j] = NULL;
                                 break;
                             }
@@ -189,7 +189,7 @@ struct Grid {
                     for (int k=i+1; k<GRID_SIZE; k++) {
                         if (board[k][j] != NULL) {
                             if (*board[k][j] == *board[i][j]) {
-                                *board[i][j] *= 2;
+                                *board[i][j] = (*board[i][j])<<1;
                                 board[k][j] = NULL;
                                 break;
                             }
@@ -214,7 +214,7 @@ struct Grid {
                     for (int k=i-1; k>=0; k--) {
                         if (board[k][j] != NULL) {
                             if (*board[k][j] == *board[i][j]) {
-                                *board[i][j] *= 2;
+                                *board[i][j] = (*board[i][j])<<1;
                                 board[k][j] = NULL;
                                 break;
                             }
@@ -226,7 +226,7 @@ struct Grid {
                     for (int k=i-1; k>=0; k--) {
                         if (board[k][j] != NULL) {
                             if (*board[k][j] == *board[i][j]) {
-                                *board[i][j] *= 2;
+                                *board[i][j] = (*board[i][j])<<1;
                                 board[k][j] = NULL;
                                 break;
                             }
