@@ -1,0 +1,47 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "C:/msys64/mingw64/bin",
+                "C:/msys64/mingw64/include",
+                "C:/msys64/mingw64/lib"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "compilerPath": "C:/msys64/mingw64/bin/g++.exe",
+            "cStandard": "c17",
+            "cppStandard": "gnu++17",
+            "intelliSenseMode": "windows-gcc-x64",
+            "configurationProvider": "ms-vscode.makefile-tools",
+            "compilerArgs": [
+                "-pedantic",
+                "-Wall",
+                "-Werror",
+                "-Wextra",
+                "-Wcast-align",
+                "-Wcast-qual",
+                "-Wctor-dtor-privacy",
+                "-Wdisabled-optimization",
+                "-Wformat=2",
+                "-Winit-self",
+                "-Wlogical-op",
+                "-Wmissing-declarations",
+                "-Wmissing-include-dirs",
+                "-Wnoexcept",
+                "-Wno-unused",
+                "-Woverloaded-virtual",
+                "-Wredundant-decls",
+                "-Wshadow",
+                "-Wstrict-null-sentinel",
+                "-Wstrict-overflow=5",
+                "-Wundef"
+            ]
+        }
+    ],
+    "version": 4
+}
