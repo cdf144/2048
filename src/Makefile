@@ -1,5 +1,5 @@
 #OBJS specifies which files to compile as part of the project
-OBJS = SDLRendererTest.cpp
+OBJS = main.cpp
 
 #OBJ_NAME specifies the name of the executable
 OBJ_NAME = 2048
@@ -8,7 +8,7 @@ OBJ_NAME = 2048
 CC = g++
 
 #INCLUDE_PATHS specifies the additional include paths to use
-INCLUDE_PATHS = -IC:\msys2\mingw64\bin\SDL2
+INCLUDE_PATHS = -IC:\msys2\mingw64\bin\SDL2 -I..
 
 #LIBRARY_PATHS specifies the additional library paths to usre
 LIBRARY_PATHS = -LC:\msys2\mingw64\lib
