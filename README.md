@@ -16,9 +16,10 @@
 ### Building from Source
 As of now the program as well as the building process are only tested on Windows 10
 
-Make sure gcc/g++ compiler have been set as PATH
+Make sure gcc/g++ compiler have been set as PATH.
+Since we are going to compile the project using `make`, make sure to modify `INCLUDE_PATHS` and `LIBRARY_PATHS` in `Makefile` so that it is appropiate with where you put the dependencies (SDL2) in your system.
 ```
-g++ -o 2048 main.cpp
+make
 .\2048.exe
 ```
-SHA1 Checksum: `3A45F81ED6C677767A9969A1B22021A2919150AF`
+SHA1 Hash: `a8c248893f2b1da5cb2ad5d49a66a759cbd8ce4b`
