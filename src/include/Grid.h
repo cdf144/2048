@@ -1,3 +1,4 @@
+#ifndef Grid_h
 #define Grid_h
 
 #include <iostream>
@@ -17,3 +18,5 @@ struct Grid {
     void moveDown();
     ~Grid();
 };
+
+#endif

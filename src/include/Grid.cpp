@@ -5,7 +5,6 @@
 using std::cin;
 using std::cout;
 
-
 Grid::Grid() {
     for (int i=0; i<GRID_SIZE; i++) {
         for (int j=0; j<GRID_SIZE; j++)
