@@ -1,3 +1,7 @@
+# Non-release executables/binaries
 src/*.exe
+*.exe
+
+# SDL2 includes and libraries
 src/include/SDL2
 src/lib
