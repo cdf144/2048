@@ -1,6 +1,8 @@
 # Non-release executables/binaries
 src/*.exe
 *.exe
+src/*.dll
+*.dll
 
 # SDL2 includes and libraries
 src/include/SDL2
