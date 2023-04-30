@@ -11,6 +11,14 @@ Grid::Grid() {
             board[i][j] = NULL;
     }
 }
+
+void Grid::addScore(int n) {
+    score += n;
+}
+
+void Grid::printScore() {
+    cout << "Score: " << score << "\n";
+}
     
 void Grid::printGrid() {
     system("cls");
@@ -30,7 +38,7 @@ void Grid::printGrid() {
         } 
         cout << "\n";
     }
-    cout << "\n";
+    printScore();
     cout << "Use WASD to move, Press 'q' to quit, 'n' to start a new game: ";
 }
     
@@ -101,6 +109,7 @@ void Grid::moveRight() {
                     if (board[i][k] != NULL) {
                         if (*board[i][k] == *board[i][j]) {
                             *board[i][j] = (*board[i][j])<<1;
+                            addScore(*board[i][j]);
                             board[i][k] = NULL;
                             break;
                         }
@@ -113,6 +122,7 @@ void Grid::moveRight() {
                     if (board[i][k] != NULL) {
                         if (*board[i][k] == *board[i][j]) {
                             *board[i][j] = (*board[i][j])<<1;
+                            addScore(*board[i][j]);
                             board[i][k] = NULL;
                             break;
                         }
@@ -138,6 +148,7 @@ void Grid::moveLeft() {
                     if (board[i][k] != NULL) {
                         if (*board[i][k] == *board[i][j]) {
                             *board[i][j] = (*board[i][j])<<1;
+                            addScore(*board[i][j]);
                             board[i][k] = NULL;
                             break;
                         }
@@ -150,6 +161,7 @@ void Grid::moveLeft() {
                     if (board[i][k] != NULL) {
                         if (*board[i][k] == *board[i][j]) {
                             *board[i][j] = (*board[i][j])<<1;
+                            addScore(*board[i][j]);
                             board[i][k] = NULL;
                             break;
                         }
@@ -175,6 +187,7 @@ void Grid::moveUp() {
                     if (board[k][j] != NULL) {
                         if (*board[k][j] == *board[i][j]) {
                             *board[i][j] = (*board[i][j])<<1;
+                            addScore(*board[i][j]);
                             board[k][j] = NULL;
                             break;
                         }
@@ -187,6 +200,7 @@ void Grid::moveUp() {
                     if (board[k][j] != NULL) {
                         if (*board[k][j] == *board[i][j]) {
                             *board[i][j] = (*board[i][j])<<1;
+                            addScore(*board[i][j]);
                             board[k][j] = NULL;
                             break;
                         }
@@ -212,6 +226,7 @@ void Grid::moveDown() {
                     if (board[k][j] != NULL) {
                         if (*board[k][j] == *board[i][j]) {
                             *board[i][j] = (*board[i][j])<<1;
+                            addScore(*board[i][j]);
                             board[k][j] = NULL;
                             break;
                         }
@@ -224,6 +239,7 @@ void Grid::moveDown() {
                     if (board[k][j] != NULL) {
                         if (*board[k][j] == *board[i][j]) {
                             *board[i][j] = (*board[i][j])<<1;
+                            addScore(*board[i][j]);
                             board[k][j] = NULL;
                             break;
                         }
@@ -240,6 +256,7 @@ void Grid::clearGrid() {
         for (int j=0; j<GRID_SIZE; j++)
             board[i][j] = nullptr;
     }
+    score = 0;
 }
 
 Grid::~Grid() {

@@ -22,4 +22,4 @@ Since we are going to compile the project using `make`, make sure to modify `INC
 make
 .\2048.exe
 ```
-SHA1 Hash: `a8c248893f2b1da5cb2ad5d49a66a759cbd8ce4b`
+SHA1 Hash: `c63086534caa8b9beef3d780145196f5e129a70e`

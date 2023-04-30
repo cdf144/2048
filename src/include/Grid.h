@@ -8,7 +8,10 @@ const int GRID_SIZE = 4;
 
 struct Grid {
     int* board[GRID_SIZE][GRID_SIZE];
+    int score = 0;
     Grid();
+    void addScore(int n);
+    void printScore();
     void printGrid();
     void generate();
     bool isGameOver();
