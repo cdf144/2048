@@ -19,6 +19,11 @@ int main() {
         // cin >> input;
         cout << "\n";
         if (input=='q') break;
+        if (input=='n') { 
+            playground.clearGrid();
+            playground.generate(); playground.generate();
+            playground.printGrid();
+        }
         if (input=='w' || input=='a' || input=='s' || input=='d') {
             switch (input) {
             case 'w':

@@ -31,7 +31,7 @@ void Grid::printGrid() {
         cout << "\n";
     }
     cout << "\n";
-    cout << "Use WASD to move, Press 'q' to quit: ";
+    cout << "Use WASD to move, Press 'q' to quit, 'n' to start a new game: ";
 }
     
 void Grid::generate() {
@@ -232,6 +232,13 @@ void Grid::moveDown() {
                 }
             }
         }
+    }
+}
+
+void Grid::clearGrid() {
+    for (int i=0; i<GRID_SIZE; i++) {
+        for (int j=0; j<GRID_SIZE; j++)
+            board[i][j] = nullptr;
     }
 }
 

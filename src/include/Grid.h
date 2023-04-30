@@ -16,6 +16,7 @@ struct Grid {
     void moveLeft();
     void moveUp();
     void moveDown();
+    void clearGrid();
     ~Grid();
 };
 
