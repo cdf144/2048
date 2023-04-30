@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cstdlib>
-#include "Grid.h"
+#include "../src/include/Grid.h"
 
 using std::cin;
 using std::cout;
