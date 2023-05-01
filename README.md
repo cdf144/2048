@@ -8,10 +8,8 @@
 - The game is won when a tile with a value of 2048 appears on the board.
 
 ### Game Features
-- A functioning 2048 game on console
-- Winning announcement *(TBA)*
-- Scoreboard & a way to create a New Game *(TBA)*
-- Graphics on a separate window with SDL *(WIP)* *(Top Priority)*
+- A functioning 2048 game on console (all core features completed)
+- Graphics on a separate window with SDL *(WIP)*
 
 ### Building from Source
 As of now the program as well as the building process are only tested on Windows 10
@@ -22,4 +20,4 @@ Since we are going to compile the project using `make`, make sure to modify `INC
 make
 .\2048.exe
 ```
-SHA1 Hash: `c63086534caa8b9beef3d780145196f5e129a70e`
+SHA1 Hash: `2bf3d9f5235d8ec610caa3fee9cbeb628af5ca4a`

@@ -11,6 +11,7 @@ struct Grid {
     int score = 0;
     Grid();
     void addScore(int n);
+    bool win();
     void printScore();
     void printGrid();
     void generate();

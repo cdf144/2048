@@ -22,6 +22,8 @@ void Grid::printScore() {
     
 void Grid::printGrid() {
     system("cls");
+    if (win())
+        cout << "You won! You can continue playing, create a New Game or quit.\n";
     for (int i=0; i<GRID_SIZE; i++) {
         for (int j=0; j<GRID_SIZE; j++) {
             if (board[i][j] == NULL) cout << "-" << "    ";
@@ -40,6 +42,15 @@ void Grid::printGrid() {
     }
     printScore();
     cout << "Use WASD to move, Press 'q' to quit, 'n' to start a new game: ";
+}
+
+bool Grid::win() {
+    for (int i=0; i<GRID_SIZE; i++) {
+        for (int j=0; j<GRID_SIZE; j++)
+            if (board[i][j] != NULL && *board[i][j] == 64)
+                return true;
+    }
+    return false;
 }
     
 void Grid::generate() {

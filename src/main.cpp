@@ -54,7 +54,8 @@ void gameLoop() {
                 }
                 playground.generate();
                 playground.printGrid();
-            } 
+            }
+            
         }
     }
 }

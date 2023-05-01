@@ -1,5 +1,5 @@
 #OBJS specifies which files to compile as part of the project
-OBJS = src/main.cpp src/include/*.cpp
+OBJS = src/*.cpp
 
 #OBJ_NAME specifies the name of the executable
 OBJ_NAME = 2048
