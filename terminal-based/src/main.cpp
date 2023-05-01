@@ -1,5 +1,3 @@
-#include <iostream>
-#include <cstdlib>
 #include <conio.h>
 #include "../src/include/Grid.h"
 
@@ -48,6 +46,7 @@ void gameLoop() {
                             return;
                         if (input=='n') { 
                             playground.clearGrid();
+                            playground.generate();
                             break;
                         }
                     }

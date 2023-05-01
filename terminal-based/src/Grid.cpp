@@ -47,7 +47,7 @@ void Grid::printGrid() {
 bool Grid::win() {
     for (int i=0; i<GRID_SIZE; i++) {
         for (int j=0; j<GRID_SIZE; j++)
-            if (board[i][j] != NULL && *board[i][j] == 64)
+            if (board[i][j] != NULL && *board[i][j] == 2048)
                 return true;
     }
     return false;

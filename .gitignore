@@ -1,6 +1,7 @@
 # Non-release executables/binaries
 src/*.exe
 *.exe
+!terminal-based/release/*.exe
 src/*.dll
 *.dll
 

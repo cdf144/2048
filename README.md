@@ -14,10 +14,12 @@
 ### Building from Source
 As of now the program as well as the building process are only tested on Windows 10
 
+There is a separate `terminal-based` version with separate (albeit the core functionalities are relatively the same) source code and makefile that you can build separately.
+
 Make sure gcc/g++ compiler have been set as PATH.
 Since we are going to compile the project using `make`, make sure to modify `INCLUDE_PATHS` and `LIBRARY_PATHS` in `Makefile` so that it is appropiate with where you put the dependencies (SDL2) in your system.
 ```
 make
 .\2048.exe
 ```
-SHA1 Hash: `2bf3d9f5235d8ec610caa3fee9cbeb628af5ca4a`
+SHA1 Hash: `948437ca45d24c381ea22d55880c873d99530a02` (for terminal-based executable)
