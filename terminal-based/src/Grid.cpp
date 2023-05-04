@@ -1,5 +1,3 @@
-#include <iostream>
-#include <cstdlib>
 #include "../src/include/Grid.h"
 
 using std::cin;

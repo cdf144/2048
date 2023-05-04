@@ -20,7 +20,7 @@ LIBRARY_PATHS = -LC:\msys2\mingw64\lib
 COMPILER_FLAGS =
 
 #LINKER_FLAGS specifies the libraries to link against
-LINKER_FLAGS = -lmingw32 -lSDL2main -lSDL2
+LINKER_FLAGS = -lmingw32 -lSDL2main -lSDL2 -lSDL2_ttf
 
 all: $(OBJS)
 	$(CC) $(OBJS) $(INCLUDE_PATHS) $(LIBRARY_PATHS) $(COMPILER_FLAGS) $(LINKER_FLAGS) -o $(OBJ_NAME)
