@@ -22,5 +22,6 @@ Since we are going to compile the project using `make`, make sure to modify `INC
 make
 .\2048.exe
 ```
-SHA1 Hash: `948437ca45d24c381ea22d55880c873d99530a02` (for terminal-based executable)
-           `ab400f2d6807a5171297a023aa6b0d17af5cbfbb` (for SDL GUI executable)
+SHA1 Hash:
+`948437ca45d24c381ea22d55880c873d99530a02` (for terminal-based executable)
+`ab400f2d6807a5171297a023aa6b0d17af5cbfbb` (for SDL GUI executable)
