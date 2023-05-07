@@ -3,6 +3,8 @@
 using std::cin;
 using std::cout;
 
+SDL_Color White = {255, 255, 255, 255};
+
 Grid::Grid() {
     for (int i=0; i<GRID_SIZE; i++) {
         for (int j=0; j<GRID_SIZE; j++)
@@ -22,23 +24,39 @@ void Grid::printGrid(SDL_Renderer* Renderer, TTF_Font* Font) {
                 int number = *board[i][j];
                 SDL_SetRenderDrawColor(Renderer, (100+(2*(number/4)))%256, (240-(3*number))%256, (240-(5*number))%256, 255);
                 SDL_RenderFillRect(Renderer, &rect);
-                SDL_Surface* surface = NULL;
-				SDL_Texture* texture = NULL;
-                SDL_Color White = {255, 255, 255, 255};
-				surface = TTF_RenderText_Blended(Font, (std::to_string(number)).c_str(), White);
-				texture = SDL_CreateTextureFromSurface(Renderer, surface);
+                SDL_Surface* numberSurface = NULL;
+				SDL_Texture* numberTexture = NULL;
+				numberSurface = TTF_RenderText_Blended(Font, (std::to_string(number)).c_str(), White);
+				numberTexture = SDL_CreateTextureFromSurface(Renderer, numberSurface);
 				int number_w, number_h;
-				SDL_QueryTexture(texture, NULL, NULL, &number_w, &number_h);
+				SDL_QueryTexture(numberTexture, NULL, NULL, &number_w, &number_h);
 				SDL_Rect numberRect = {100*j + ((100 - number_w)/2), 100*i + ((100 - number_h)/2), number_w, number_h};
-                SDL_RenderCopy(Renderer, texture, NULL, &numberRect);
-				SDL_FreeSurface(surface);
-				SDL_DestroyTexture(texture);
+                SDL_RenderCopy(Renderer, numberTexture, NULL, &numberRect);
+				SDL_FreeSurface(numberSurface);
+				SDL_DestroyTexture(numberTexture);
             } else {
                 SDL_SetRenderDrawColor(Renderer, 187, 173, 160, 255);
                 SDL_RenderFillRect(Renderer, &rect);
             }
         }
     }
+    SDL_RenderPresent(Renderer);
+}
+
+void Grid::printLose(SDL_Renderer* Renderer, TTF_Font* Font) {
+    SDL_Surface* loseSurface;
+    SDL_Texture* loseTexture;
+    loseSurface = TTF_RenderText_Blended(Font, "Game Over.", White);
+    loseTexture = SDL_CreateTextureFromSurface(Renderer, loseSurface);
+    int lose_w, lose_h;
+	SDL_QueryTexture(loseTexture, NULL, NULL, &lose_w, &lose_h);
+    SDL_Rect loseRect = {((SCREEN_WIDTH - lose_w)/2), ((SCREEN_HEIGHT - lose_h)/2), lose_w, lose_h};
+    SDL_Rect screenRect = {0, 0, SCREEN_WIDTH, SCREEN_HEIGHT};
+    SDL_SetRenderDrawColor(Renderer, 10, 10, 10, 255);
+    SDL_RenderFillRect(Renderer, &screenRect);
+	SDL_RenderCopy(Renderer, loseTexture, NULL, &loseRect);
+	SDL_FreeSurface(loseSurface);
+	SDL_DestroyTexture(loseTexture);
     SDL_RenderPresent(Renderer);
 }
 

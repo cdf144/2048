@@ -25,6 +25,7 @@ struct Grid {
     void addScore(int n);
     bool win();
     void printGrid(SDL_Renderer* Renderer, TTF_Font* Font);
+    void printLose(SDL_Renderer* Renderer, TTF_Font* Font);
     void generate();
     bool isGameOver();
     void moveRight();

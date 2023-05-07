@@ -51,7 +51,6 @@ void gameLoop(SDL_Renderer* Renderer) {
         playground.generate(); playground.generate();
         playground.printGrid(Renderer, gFont);
         while (SDL_WaitEvent(&e)) {
-            SDL_RenderClear(Renderer);
             if (e.type == SDL_KEYUP)
                 continue;
             if (e.type == SDL_QUIT)
@@ -76,6 +75,18 @@ void gameLoop(SDL_Renderer* Renderer) {
                     }
                     playground.generate(); 
                     playground.printGrid(Renderer, gFont);
+                }
+            }
+            if (playground.isGameOver()) {
+                playground.printLose(Renderer, gFont);
+                while (SDL_WaitEvent(&e) && (e.key.keysym.sym != SDLK_q || e.key.keysym.sym != SDLK_n)) {
+                    if (e.key.keysym.sym == SDLK_q) return;
+                    if (e.key.keysym.sym == SDLK_n) {
+                        playground.clearGrid(Renderer);
+                        playground.generate(); playground.generate();
+                        playground.printGrid(Renderer, gFont);
+                        break;
+                    }
                 }
             }
         }
