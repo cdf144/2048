@@ -15,15 +15,32 @@ Grid::Grid() {
 void Grid::addScore(int n) {
     score += n;
 }
+
+void Grid::printScore(SDL_Renderer* Renderer, TTF_Font* Font) {
+    std::string scoreString = "Score: " + std::to_string(score);
+    SDL_Surface* scoreSurface;
+    SDL_Texture* scoreTexture;
+    scoreSurface = TTF_RenderText_Blended(Font, scoreString.c_str(), White);
+    scoreTexture = SDL_CreateTextureFromSurface(Renderer, scoreSurface);
+    int score_w, score_h;
+	SDL_QueryTexture(scoreTexture, NULL, NULL, &score_w, &score_h);
+    SDL_Rect scoreRect = {(400-score_w)/2, 400 + ((100-score_h)/2), score_w, score_h};
+    SDL_Rect scoreBackgroundRect = {0, 400, 400, 100};
+    SDL_SetRenderDrawColor(Renderer, 100, 100, 100, 255);
+    SDL_RenderFillRect(Renderer, &scoreBackgroundRect);
+	SDL_RenderCopy(Renderer, scoreTexture, NULL, &scoreRect);
+	SDL_FreeSurface(scoreSurface);
+	SDL_DestroyTexture(scoreTexture);
+}
     
 void Grid::printGrid(SDL_Renderer* Renderer, TTF_Font* Font) {
     for (int i=0; i<GRID_SIZE; i++) {
         for (int j=0; j<GRID_SIZE; j++) {
-            SDL_Rect rect = {j*100, i*100, 100, 100};
+            SDL_Rect tileRect = {j*100, i*100, 100, 100};
             if (board[i][j] != NULL) {
                 int number = *board[i][j];
                 SDL_SetRenderDrawColor(Renderer, (100+(2*(number/4)))%256, (240-(3*number))%256, (240-(5*number))%256, 255);
-                SDL_RenderFillRect(Renderer, &rect);
+                SDL_RenderFillRect(Renderer, &tileRect);
                 SDL_Surface* numberSurface = NULL;
 				SDL_Texture* numberTexture = NULL;
 				numberSurface = TTF_RenderText_Blended(Font, (std::to_string(number)).c_str(), White);
@@ -36,10 +53,11 @@ void Grid::printGrid(SDL_Renderer* Renderer, TTF_Font* Font) {
 				SDL_DestroyTexture(numberTexture);
             } else {
                 SDL_SetRenderDrawColor(Renderer, 187, 173, 160, 255);
-                SDL_RenderFillRect(Renderer, &rect);
+                SDL_RenderFillRect(Renderer, &tileRect);
             }
         }
     }
+    printScore(Renderer, Font);
     SDL_RenderPresent(Renderer);
 }
 

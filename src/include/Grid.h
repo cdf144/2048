@@ -9,7 +9,7 @@
 
 const int GRID_SIZE = 4;
 const int SCREEN_WIDTH = 400;
-const int SCREEN_HEIGHT = 400;
+const int SCREEN_HEIGHT = 500;
 const int PADDING = 10;
 
 const int DEFAULT_FONT_SIZE = 40;
@@ -24,6 +24,7 @@ struct Grid {
     Grid();
     void addScore(int n);
     bool win();
+    void printScore(SDL_Renderer* Renderer, TTF_Font* Font);
     void printGrid(SDL_Renderer* Renderer, TTF_Font* Font);
     void printLose(SDL_Renderer* Renderer, TTF_Font* Font);
     void generate();
