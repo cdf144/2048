@@ -2,6 +2,7 @@
 src/*.exe
 *.exe
 !terminal-based/release/*.exe
+!release/*.exe
 src/*.dll
 *.dll
 
