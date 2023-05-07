@@ -37,10 +37,13 @@ void Grid::printGrid(SDL_Renderer* Renderer, TTF_Font* Font) {
     for (int i=0; i<GRID_SIZE; i++) {
         for (int j=0; j<GRID_SIZE; j++) {
             SDL_Rect tileRect = {j*100, i*100, 100, 100};
+            SDL_Rect tileRectWithPadding = {j*100 + PADDING, i*100 + PADDING, 100 - PADDING*2, 100 - PADDING*2};
+            SDL_SetRenderDrawColor(Renderer, 187, 173, 160, 255);
+            SDL_RenderFillRect(Renderer, &tileRect);
             if (board[i][j] != NULL) {
                 int number = *board[i][j];
-                SDL_SetRenderDrawColor(Renderer, (100+(2*(number/4)))%256, (240-(3*number))%256, (240-(5*number))%256, 255);
-                SDL_RenderFillRect(Renderer, &tileRect);
+                SDL_SetRenderDrawColor(Renderer, (122+(2*(number/4)))%256, (122-(number/4))%256, (122-(number/4))%256, 255);
+                SDL_RenderFillRect(Renderer, &tileRectWithPadding);
                 SDL_Surface* numberSurface = NULL;
 				SDL_Texture* numberTexture = NULL;
 				numberSurface = TTF_RenderText_Blended(Font, (std::to_string(number)).c_str(), White);
@@ -51,9 +54,6 @@ void Grid::printGrid(SDL_Renderer* Renderer, TTF_Font* Font) {
                 SDL_RenderCopy(Renderer, numberTexture, NULL, &numberRect);
 				SDL_FreeSurface(numberSurface);
 				SDL_DestroyTexture(numberTexture);
-            } else {
-                SDL_SetRenderDrawColor(Renderer, 187, 173, 160, 255);
-                SDL_RenderFillRect(Renderer, &tileRect);
             }
         }
     }

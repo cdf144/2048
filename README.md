@@ -9,7 +9,7 @@
 
 ### Game Features
 - A functioning 2048 game on console (all core features completed)
-- Graphics on a separate window with SDL *(WIP)*
+- Graphics on a separate window with SDL (demo complete)
 
 ### Building from Source
 As of now the program as well as the building process are only tested on Windows 10
@@ -23,3 +23,4 @@ make
 .\2048.exe
 ```
 SHA1 Hash: `948437ca45d24c381ea22d55880c873d99530a02` (for terminal-based executable)
+           `ab400f2d6807a5171297a023aa6b0d17af5cbfbb` (for SDL GUI executable)
