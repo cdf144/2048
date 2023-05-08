@@ -62,7 +62,7 @@ void gameLoop(SDL_Renderer* Renderer) {
         playground.generate(); playground.generate();
         playground.printGrid(Renderer, gFont);
         while (SDL_WaitEvent(&e)) {
-            if (e.type == SDL_KEYUP)
+            if (e.type == SDL_KEYUP || e.type == SDL_MOUSEMOTION || e.type == SDL_MOUSEBUTTONUP || e.type == SDL_MOUSEBUTTONDOWN)
                 continue;
             if (e.type == SDL_QUIT)
                 quit = true;
