@@ -77,15 +77,6 @@ void Grid::printLose(SDL_Renderer* Renderer, TTF_Font* Font) {
 	SDL_DestroyTexture(loseTexture);
     SDL_RenderPresent(Renderer);
 }
-
-bool Grid::win() {
-    for (int i=0; i<GRID_SIZE; i++) {
-        for (int j=0; j<GRID_SIZE; j++)
-            if (board[i][j] != NULL && *board[i][j] == 2048)
-                return true;
-    }
-    return false;
-}
     
 void Grid::generate() {
     int countEmptyTiles = 0;

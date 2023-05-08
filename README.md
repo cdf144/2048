@@ -23,5 +23,6 @@ make
 .\2048.exe
 ```
 SHA1 Hash:
+
 `948437ca45d24c381ea22d55880c873d99530a02` (for terminal-based executable)
-`ab400f2d6807a5171297a023aa6b0d17af5cbfbb` (for SDL GUI executable)
+`cae4b437cf3a43eb254fea11b8df89a43508483f` (for SDL GUI executable)

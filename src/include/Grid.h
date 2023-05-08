@@ -6,6 +6,7 @@
 #include <string>
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_ttf.h>
+#include <SDL2/SDL_mixer.h>
 
 const int GRID_SIZE = 4;
 const int SCREEN_WIDTH = 400;
@@ -23,7 +24,6 @@ struct Grid {
     int score = 0;
     Grid();
     void addScore(int n);
-    bool win();
     void printScore(SDL_Renderer* Renderer, TTF_Font* Font);
     void printGrid(SDL_Renderer* Renderer, TTF_Font* Font);
     void printLose(SDL_Renderer* Renderer, TTF_Font* Font);
