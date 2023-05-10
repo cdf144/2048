@@ -32,4 +32,4 @@ make
 SHA1 Hash:
 
 `948437ca45d24c381ea22d55880c873d99530a02` (for terminal-based executable)
-`00be8c8fc46423c976b274e35d45b9a458dc4a6c` (for SDL GUI executable)
+`d518134e498d4dfc94f3a5f28774d8c34d432c0a` (for SDL GUI executable)
