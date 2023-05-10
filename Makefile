@@ -8,7 +8,7 @@ OBJ_NAME = 2048
 CC = g++
 
 #INCLUDE_PATHS specifies the additional include paths to use
-INCLUDE_PATHS = -IC:\msys2\mingw64\bin\SDL2 -I..
+INCLUDE_PATHS = -IC:\msys2\mingw64\bin\SDL2 -I.\src\include
 
 #LIBRARY_PATHS specifies the additional library paths to usre
 LIBRARY_PATHS = -LC:\msys2\mingw64\lib

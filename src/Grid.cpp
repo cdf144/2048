@@ -1,4 +1,4 @@
-#include "../src/include/Grid.h"
+#include "Grid.h"
 
 using std::cin;
 using std::cout;
